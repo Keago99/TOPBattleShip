@@ -1,0 +1,13 @@
+
+
+@font-face {
+    font-family: 'SailorFont';
+    src: url('SailorsFatTattooScriptDemoByOutOfStepFontCompany-7B6ql.ttf');
+    }
+
+h1{
+    font-family: SailorFont, sans-serif;
+    Color: lightBlue;
+    font-size: 100px;
+    align-items: center;
+}
