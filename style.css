@@ -8,6 +8,32 @@
 h1{
     font-family: SailorFont, sans-serif;
     Color: lightBlue;
-    font-size: 100px;
+    font-size: 75px;
+}
+
+#mainArea{
+    display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#mainHeading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#gridArea{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    border: 4px dotted navy;
+    height: 500px;
+    width: 800px;
+    gap: 20px;
+}
+
+.grid-Item{
+    background-color: red;
 }

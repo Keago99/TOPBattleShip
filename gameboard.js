@@ -13,7 +13,21 @@ class gameboard{
     }
 
     // A function to figure out if a ship is here or not
-    shipHere(){
+    shipHere(x, y, board){
 
+    }
+}
+
+// This method creates a blank grid at the start of each game. (I do not want to create 100 divs)
+function createGrid(){
+    const gridArea = document.getElementById("gridArea");
+
+    for(let i = 0; i < 10; i++){
+        for(let j = 0; j < 10; j++){
+
+            const gridItem = document.createElement("div");
+            gridItem.className = "grid-item";
+            gridArea.appendChild(gridItem);
+        }
     }
 }
