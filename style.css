@@ -31,15 +31,34 @@ h1{
 }
 
 #gridArea{
+    display: flex;
+    align-items: normal;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 500px;
+    width: 1200px;
+    gap: 5px;
+}
+
+#grid1{
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
     border: 4px dotted navy;
-    height: 500px;
-    width: 800px;
-    gap: 5px;
+    width: 550px;
+    gap: 2px;
+}
+
+#grid2{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    border: 4px dotted navy;
+    width: 550px;
+    gap: 2px;
 }
 
 .grid-Item{
-    background-color: rgb(185, 153, 8);
+    background-color: rgb(114, 56, 8);
+    border: red;
 }

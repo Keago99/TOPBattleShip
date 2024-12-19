@@ -4,7 +4,7 @@ export class gameboard{
         this.height = height;
         // Learning map and fill, this is a great impementation though, although it could be split to be
         // easier to read.
-        this.gameboard = Array(height).fill("whaa").map(() => Array(width).fill("whoo"));
+        this.gameboardArray = Array(height).fill(null).map(() => Array(width).fill(null));
     }
 
     // A function to figure out if a ship is hit or not
@@ -29,14 +29,26 @@ export class gameboard{
 }
 
 // This method creates a blank grid at the start of each game. (I do not want to create 100 divs)
-export function createGrid(){
-    const gridArea = document.getElementById("gridArea");
+export function createGrid1(){
+    const gridArea = document.getElementById("grid1");
 
     for(let i = 0; i < 10; i++){
         for(let j = 0; j < 10; j++){
-            const gridItem = document.createElement("div");
+            let gridItem = document.createElement("div");
             gridItem.className = "grid-Item";
             gridArea.appendChild(gridItem);
+        }
+    }
+}
+
+export function createGrid2(){
+    const gridArea2 = document.getElementById("grid2");
+
+    for(let i = 0; i < 10; i++){
+        for(let j = 0; j < 10; j++){
+            let gridItem = document.createElement("div");
+            gridItem.className = "grid-Item";
+            gridArea2.appendChild(gridItem);
         }
     }
 }

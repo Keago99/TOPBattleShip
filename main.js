@@ -1,11 +1,12 @@
 // This will be the code that is used in the actual game, or the "main" javascript 
-import { createGrid, gameboard } from "./gameboard.js";
+import { createGrid1, gameboard, createGrid2 } from "./gameboard.js";
 import {player} from "./player.js";
 
-createGrid();
+createGrid1();
+createGrid2();
 
 const player1 = new player("real", new gameboard(10,10));
-console.log(player1.board.gameboard[0][2]);
+const player2 = new player("CPU", new gameboard(10, 10));
 
 
 
