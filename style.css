@@ -5,9 +5,15 @@
     src: url('SailorsFatTattooScriptDemoByOutOfStepFontCompany-7B6ql.ttf');
     }
 
+body{
+    background-image: url("oldNauticalMap.jpg");
+    background-size: cover;
+}
+
+
 h1{
     font-family: SailorFont, sans-serif;
-    Color: lightBlue;
+    Color: navy;
     font-size: 75px;
 }
 
@@ -31,9 +37,9 @@ h1{
     border: 4px dotted navy;
     height: 500px;
     width: 800px;
-    gap: 20px;
+    gap: 5px;
 }
 
 .grid-Item{
-    background-color: red;
+    background-color: rgb(185, 153, 8);
 }
