@@ -1,6 +1,6 @@
 
-class ship{
-    constructor(length, hits, isSunk){
+export class ship{
+    constructor(length){
         this.length = length;
         hits = 0;
         isSunk = false

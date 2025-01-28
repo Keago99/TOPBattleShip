@@ -1,3 +1,6 @@
+import { ship } from "./ship.js";
+
+
 export class gameboard{
     constructor(width = 10, height =10){
         this.width = width;
@@ -26,6 +29,28 @@ export class gameboard{
     createShip(x,y,board){
         
     }
+
+    placeShips(board){
+        const shipPlacements = [
+            new ship(5),
+            new ship(4),
+            new ship(3),
+            new ship(3),
+            new ship(2)
+        ];
+        // Creates a duplicate Array based on old array this is called Spread notation.
+        let shipsToPlace = [...shipPlacements];
+
+        while (shipsToPlace.length > 0){
+            let currentShip = shipsToPlace.shift();
+            // creates two random numbers between 0-9
+            let x = Math.floor(Math.random() * 10);
+            let y = Math.floor(Math.random() * 10);
+            // basically a coinflip, either 0 or 1
+            let direction = Math.floor(Math.random() * 2);
+            
+        }
+    }
 }
 
 // This method creates a blank grid at the start of each game. (I do not want to create 100 divs)
@@ -35,7 +60,7 @@ export function createGrid1(){
     for(let i = 0; i < 10; i++){
         for(let j = 0; j < 10; j++){
             let gridItem = document.createElement("div");
-            gridItem.className = "grid-Item";
+            gridItem.className = "grid-Item1";
             gridArea.appendChild(gridItem);
         }
     }
@@ -47,7 +72,7 @@ export function createGrid2(){
     for(let i = 0; i < 10; i++){
         for(let j = 0; j < 10; j++){
             let gridItem = document.createElement("div");
-            gridItem.className = "grid-Item";
+            gridItem.className = "grid-Item2";
             gridArea2.appendChild(gridItem);
         }
     }
