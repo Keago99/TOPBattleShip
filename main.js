@@ -1,13 +1,25 @@
 // This will be the code that is used in the actual game, or the "main" javascript 
 import { createGrid1, gameboard, createGrid2 } from "./gameboard.js";
 import {player} from "./player.js";
+import { ship } from "./ship.js";
 
 createGrid1();
 createGrid2();
 
-const player1 = new player("real", new gameboard(10,10));
-const player2 = new player("CPU", new gameboard(10, 10));
+const player1 = new player("real");
+const player2 = new player("CPU");
 
+
+player1.gameboard.placeShip(new ship(5));
+
+for (let x = 0; x < player1.gameboard.width; x++) {
+    for (let y = 0; y < player1.gameboard.height; y++) {
+        const Shippers = player1.gameboard.gameboardArray[y][x];
+        if (Shippers instanceof ship) {
+            console.log(`Ship found at coordinates [${x}, ${y}]:`);
+        }
+    }
+}
 
 
 
