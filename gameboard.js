@@ -22,9 +22,9 @@ export class gameboard{
 
     isValidPosition(x, y) {
         // Check if the x-coordinate is greater than or equal to zero and less than the board's width
-        if (x >= 0 && x < this.width + 1) {
+        if (x >= 0 && x < this.width) {
             // Check if the y-coordinate is greater than or equal to zero and less than the board's height
-            if (y >= 0 && y < this.height +1) {
+            if (y >= 0 && y < this.height) {
                 // If both conditions are met, the position is valid
                 return true;
             } else {
@@ -89,7 +89,55 @@ export class gameboard{
     }
     return false; // No overlap detected, all clear to place the ship!
 }
+//AI METHODS BEGIN HERE
+getCell(x, y) {
+    if (x >= 0 && x < this.width && y >= 0 && y < this.height) {
+        return this.gameboardArray[y][x];
+    }
+    return null;
 }
+
+// The method to set a value in the board
+setCell(x, y, value) {
+    if (x >= 0 && x < this.width && y >= 0 && y < this.height) {
+        this.gameboardArray[y][x] = value;
+    }
+}
+
+}
+
+export function createGrid1(gameboard) {
+    const gridArea = document.getElementById("grid1");
+
+    // Clear the gridArea before adding items
+    gridArea.innerHTML = '';
+
+    for (let i = 0; i < gameboard.height; i++) {
+        for (let j = 0; j < gameboard.width; j++) {
+            let gridItem = document.createElement("div");
+            gridItem.className = "grid-Item1";
+            
+            // Optionally: If you want to use the gameboard's data, you can link it here
+            // Example: add a class or data attribute that reflects the gameboard's array value
+            const value = gameboard.getCell(j, i);
+            if (value !== null) {
+                gridItem.dataset.value = value;
+            }
+
+            // Optionally, you can modify gridItem styling based on the value
+            if (value !== null) {
+                gridItem.style.backgroundColor = 'red';
+            } else if (value === null) {
+                gridItem.style.backgroundColor = 'blue';
+            }
+
+            gridArea.appendChild(gridItem);
+        }
+    }
+}
+
+
+/*  OLD HANDCRAFTED CREATEGRID METHOD
 // This method creates a blank grid at the start of each game. (I do not want to create 100 divs)
 export function createGrid1(){
     const gridArea = document.getElementById("grid1");
@@ -102,7 +150,7 @@ export function createGrid1(){
         }
     }
 }
-
+*/
 export function createGrid2(){
     const gridArea2 = document.getElementById("grid2");
 
@@ -113,4 +161,8 @@ export function createGrid2(){
             gridArea2.appendChild(gridItem);
         }
     }
+}
+
+export function fillGrid(ArrayList){
+
 }

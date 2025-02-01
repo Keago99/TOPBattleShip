@@ -3,8 +3,6 @@ import { createGrid1, gameboard, createGrid2 } from "./gameboard.js";
 import {player} from "./player.js";
 import { ship } from "./ship.js";
 
-createGrid1();
-createGrid2();
 
 const player1 = new player("real");
 const player2 = new player("CPU");
@@ -21,7 +19,8 @@ for (let x = 0; x < player1.gameboard.width; x++) {
     }
 }
 
-
+createGrid1(player1.gameboard);
+//who KNOWS
 
 // create two players
 // each gameboard has 5 ships placed randomly
